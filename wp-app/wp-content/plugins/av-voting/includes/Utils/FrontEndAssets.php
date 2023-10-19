@@ -22,5 +22,12 @@ class FrontEndAssets extends AssetsAbstract
             ['jquery'],
             AVV_PLUGIN_VERSION
         );
+
+        wp_localize_script('av-voting', 'avVoting',
+            array(
+                'url' => admin_url('admin-ajax.php'),
+                'nonce' => wp_create_nonce('wp_rest')
+            )
+        );
     }
 }

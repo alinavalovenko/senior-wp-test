@@ -11,6 +11,8 @@
  */
 
 use AvVoting\Filters\ContentFilters;
+use AvVoting\Handlers\SaveVoteHandler;
+use AvVoting\Routes\Routes;
 use AvVoting\Utils\BackEndAssets;
 use AvVoting\Utils\FrontEndAssets;
 
@@ -68,6 +70,13 @@ class AvVoting
     {
         add_action('wp', new ContentFilters());
     }
+
+    private function hooks()
+    {
+        add_action('wp_ajax_av_save_vote', [SaveVoteHandler::class, 'handle']);
+        add_action('wp_ajax_nopriv_av_save_vote', [SaveVoteHandler::class, 'handle']);
+    }
 }
 
 add_action('init', new AvVoting());
+add_action('rest_api_init', new Routes());
