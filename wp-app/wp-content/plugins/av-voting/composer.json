@@ -1,0 +1,17 @@
+{
+  "name": "alinavalovenko/av-voting",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "alinavalovenko",
+      "email": "alina.valovenko@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AvVoting\\":"includes/"
+    }
+  }
+}
