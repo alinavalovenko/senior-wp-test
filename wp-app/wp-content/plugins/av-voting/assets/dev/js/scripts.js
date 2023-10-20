@@ -1,13 +1,14 @@
 jQuery(document).ready(($) => {
-    const isVoted = localStorage.getItem('av_is_voted') || false;
-    const ajaxurl = window.avVoting.url;
     const $container = $('.av-voting-wrap');
     const id = $container.attr('data-post-id');
+    const post_type = $container.attr('data-post_type');
+    const isVoted = localStorage.getItem(post_type + '_' + id + '_av_is_voted') || false;
+    const ajaxurl = window.avVoting.url;
 
     initView();
 
     function setActiveButton() {
-        const userVote = window.localStorage.getItem('user_vote'); // 1 means positive, 0 means negative
+        const userVote = window.localStorage.getItem(post_type + '_' + id +'_user_vote'); // 1 means positive, 0 means negative
 
         if (isVoted) {
             if (userVote == 1) {
@@ -45,8 +46,8 @@ jQuery(document).ready(($) => {
 
     $(document).on('click', '#avv-form .avv-form__button', (e) => {
         const vote = $(e.target).closest('.avv-form__button').attr('data-value');
-        localStorage.setItem('av_is_voted', 'true');
-        localStorage.setItem('user_vote', vote);
+        localStorage.setItem(post_type  + '_' + id + '_av_is_voted', 'true');
+        localStorage.setItem(post_type  + '_' + id + '_user_vote', vote);
 
         $.post(ajaxurl, {
             action: 'av_save_vote',
@@ -56,7 +57,7 @@ jQuery(document).ready(($) => {
         }, (response) => {
             if (response.success) {
                 $container.html(response.html);
-                if (window.localStorage.getItem('user_vote') == 1) {
+                if (window.localStorage.getItem(post_type  + '_' + id + '_user_vote') == 1) {
                     $container.find('.avv-form__positive').addClass('active');
                 } else {
                     $container.find('.avv-form__negative').addClass('active');

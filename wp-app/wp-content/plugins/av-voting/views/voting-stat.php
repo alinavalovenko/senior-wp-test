@@ -4,7 +4,7 @@
 ?>
 <div class="avv-voting-inner">
     <div class="avv-form">
-        <div class="avv-form-column avv-form__label"><?php _e('Thank you for you feedback!', 'av-voting');?></div>
+        <div class="avv-form-column avv-form__label"><?php _e('Thank you for your feedback!', 'av-voting');?></div>
         <div class="avv-form-column avv-form__button avv-form__positive">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" viewBox="0 0 472.615 472.615" xml:space="preserve">
 <g>

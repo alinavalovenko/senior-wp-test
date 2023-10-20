@@ -17,6 +17,6 @@ class ContentFilters
     public function appendVotingHolder(string $content): string
     {
         global $post;
-        return $content . '<div class="av-voting-wrap" data-post-id="' . $post->ID . '"></div>';
+        return $content . '<div class="av-voting-wrap" data-post_type="' . $post->post_type . '" data-post-id="' . $post->ID . '"></div>';
     }
 }
