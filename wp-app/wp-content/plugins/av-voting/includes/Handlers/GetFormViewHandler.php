@@ -4,7 +4,7 @@ namespace AvVoting\Handlers;
 
 use WP_REST_Request;
 
-class GetViewHandler implements HandleRequestInterface
+class GetFormViewHandler implements HandleRequestInterface
 {
     public function handle(WP_REST_Request $request)
     {

@@ -58,6 +58,7 @@ class AvVoting
     {
         $this->registerAssets();
         $this->filters();
+        $this->hooks();
     }
 
     private function registerAssets()
@@ -73,8 +74,8 @@ class AvVoting
 
     private function hooks()
     {
-        add_action('wp_ajax_av_save_vote', [SaveVoteHandler::class, 'handle']);
-        add_action('wp_ajax_nopriv_av_save_vote', [SaveVoteHandler::class, 'handle']);
+        add_action('wp_ajax_av_save_vote', new SaveVoteHandler());
+        add_action('wp_ajax_nopriv_av_save_vote', new SaveVoteHandler());
     }
 }
 

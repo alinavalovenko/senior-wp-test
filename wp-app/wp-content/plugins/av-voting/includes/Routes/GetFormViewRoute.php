@@ -2,16 +2,16 @@
 
 namespace AvVoting\Routes;
 
-use AvVoting\Handlers\GetViewHandler;
+use AvVoting\Handlers\GetFormViewHandler;
 
-class GetViewRoute implements RegisterRestRoutesInterface
+class GetFormViewRoute implements RegisterRestRoutesInterface
 {
     /**
      * @inheritDoc
      */
     public function getName(): string
     {
-        return '/get-view';
+        return '/get-form';
     }
 
     /**
@@ -27,15 +27,13 @@ class GetViewRoute implements RegisterRestRoutesInterface
      */
     public function getArguments(): array
     {
-        $handler = new GetViewHandler();
+        $handler = new GetFormViewHandler();
         return [
             [
                 'methods'             => 'GET',
                 'callback'            => [$handler, 'handle'],
                 'args'                => [],
-                'permission_callback' => function () {
-                    return current_user_can( 'edit_others_posts' );
-                }
+                'permission_callback' => '__return_true',
             ]
         ];
     }

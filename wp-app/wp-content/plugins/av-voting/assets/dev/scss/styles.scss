@@ -1,0 +1,65 @@
+.avv-voting-inner {
+  display: flex;
+  padding: 15px;
+  font-weight: bold;
+
+  .avv-form {
+    color: #504d4d;
+    border: 2px dashed #d85ae5;
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on small screens */
+    padding: 20px; /* Add some spacing around the container */
+    align-items: center;
+    justify-content: flex-start;
+
+    .avv-form-column {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      margin: auto 15px;
+      padding: 5px;
+
+      span {
+        padding-left: 7px;
+      }
+    }
+
+    .avv-form-column.avv-form__label {
+      flex-grow: 2;
+
+      @media only screen and (max-width: 600px) {
+        & {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .avv-form__button {
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+
+    svg {
+      fill: lightgrey;
+    }
+
+    &:hover,
+    &:active{
+      border-color: #504d4d;
+    }
+
+    &:hover svg,
+    &:active svg{
+      fill: #504d4d;
+    }
+
+    &.active {
+      border-color: mediumblue;
+
+      svg {
+        fill: mediumblue;
+      }
+    }
+  }
+}

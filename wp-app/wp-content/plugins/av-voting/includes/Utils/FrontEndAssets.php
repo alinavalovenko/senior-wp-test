@@ -26,7 +26,8 @@ class FrontEndAssets extends AssetsAbstract
         wp_localize_script('av-voting', 'avVoting',
             array(
                 'url' => admin_url('admin-ajax.php'),
-                'nonce' => wp_create_nonce('wp_rest')
+                'nonce' => wp_create_nonce('wp_rest'),
+                'formnonce' => wp_create_nonce('formnonce')
             )
         );
     }

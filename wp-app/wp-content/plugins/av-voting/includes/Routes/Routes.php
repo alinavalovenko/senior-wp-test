@@ -6,12 +6,14 @@ class Routes
 {
     public function __invoke()
     {
-        $route = new GetViewRoute();
+        $routes = [new GetFormViewRoute(), new GetStatViewRoute()];
 
-        register_rest_route(
-            $route->getRoute(),
-            $route->getName(),
-            $route->getArguments(),
-        );
+        foreach ($routes as $route) {
+            register_rest_route(
+                $route->getRoute(),
+                $route->getName(),
+                $route->getArguments(),
+            );
+        }
     }
 }
