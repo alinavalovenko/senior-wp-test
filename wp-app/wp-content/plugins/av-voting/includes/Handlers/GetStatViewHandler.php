@@ -1,4 +1,7 @@
 <?php
+/**
+ * Rest API handler to fetch statistics for post
+ */
 
 namespace AvVoting\Handlers;
 

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Content filter to append voting widget and allow user interact with it.
+ */
 
 namespace AvVoting\Filters;
 

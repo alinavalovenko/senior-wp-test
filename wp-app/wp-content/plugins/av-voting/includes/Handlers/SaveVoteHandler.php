@@ -1,4 +1,7 @@
 <?php
+/**
+ * Ajax handler to save voting results for post
+ */
 
 namespace AvVoting\Handlers;
 

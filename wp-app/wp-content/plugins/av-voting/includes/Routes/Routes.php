@@ -1,4 +1,7 @@
 <?php
+/**
+ * Register custom REST Api routes
+ */
 
 namespace AvVoting\Routes;
 

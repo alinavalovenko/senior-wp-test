@@ -1,4 +1,7 @@
 <?php
+/**
+ * Register meta boxes to diplay and update values from admin panel
+ */
 
 namespace AvVoting\Admin;
 

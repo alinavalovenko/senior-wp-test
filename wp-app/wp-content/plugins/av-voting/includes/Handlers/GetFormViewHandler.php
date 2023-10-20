@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Rest api handler which allows to get voting form.
+ */
 namespace AvVoting\Handlers;
 
 use WP_REST_Request;
