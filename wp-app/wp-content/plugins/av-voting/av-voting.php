@@ -10,6 +10,7 @@
  * Requires PHP: 8.0.28
  */
 
+use AvVoting\Admin\MetaBox;
 use AvVoting\Filters\ContentFilters;
 use AvVoting\Handlers\SaveVoteHandler;
 use AvVoting\Routes\Routes;
@@ -80,4 +81,5 @@ class AvVoting
 }
 
 add_action('init', new AvVoting());
+add_action('admin_init', new MetaBox());
 add_action('rest_api_init', new Routes());
