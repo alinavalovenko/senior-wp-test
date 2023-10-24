@@ -18,7 +18,7 @@ class SaveVoteHandler
         }
 
         if (!isset($_POST['value'])) {
-            wp_send_json(['error' => 'Vote value id is mandatory'], 400);
+            wp_send_json(['error' => 'Vote value is mandatory'], 400);
         }
         $id = $_POST['id'];
         $vote = $_POST['value'];

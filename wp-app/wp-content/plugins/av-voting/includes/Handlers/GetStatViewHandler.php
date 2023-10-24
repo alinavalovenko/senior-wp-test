@@ -29,9 +29,6 @@ class GetStatViewHandler implements HandleRequestInterface
         if ($totalVotes > 0) {
             $positive = round(($positive / $totalVotes) * 100);
             $negative = 100 - $positive;
-        } else {
-            $positivePercentage = 0;
-            $negativePercentage = 0;
         }
 
         ob_start();
